@@ -1,0 +1,48 @@
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Variables de la marca */
+
+:root{
+
+    --background:#08111F;
+
+    --section:#F3F7FB;
+
+    --primary:#2388FF;
+
+    --secondary:#0B4A8A;
+
+    --text:#FFFFFF;
+
+    --text-dark:#1E293B;
+
+}
+
+/* Página */
+
+html,
+body,
+#root{
+
+    width:100%;
+    min-height:100%;
+
+}
+
+body{
+
+    font-family:Inter, sans-serif;
+
+    background:var(--background);
+
+}
+
+html{
+    scroll-behavior:smooth;
+}

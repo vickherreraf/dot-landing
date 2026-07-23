@@ -1,0 +1,67 @@
+.navbar {
+    position: sticky;
+    top:0;
+    z-index:1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px;
+    background: #08111F;
+    border-bottom:1px solid #5575ac;
+;
+}
+
+/* ===== LOGO ===== */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 55px;
+    width: auto;
+    display: block;
+}
+
+/* ===== MENÚ ===== */
+.nav-links{
+    display:flex;
+    margin-left:auto;
+    gap:20px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#5575ac;
+    font-size:14px;
+    font-weight:500;
+    padding:10px 18px;
+    border-radius:999px;
+    transition:all .25s ease;
+}
+
+.nav-links a:hover{
+    background:#02203f;
+    color:white;
+}
+
+/* === CTA BUTTON ===  */
+.cta-button{
+background:#1F66F2;
+color:white;
+border:2px solid #1F66F2;
+padding:10px 26px;
+border-radius:20px;
+font-size:15px;
+font-weight:600;
+cursor:pointer;
+transition:all .25s ease;
+}
+
+.cta-button:hover{
+    transform:translateY(-2px);
+    background:#08111F;
+    border:2px solid #1F66F2;
+    color:#1F66F2;
+}

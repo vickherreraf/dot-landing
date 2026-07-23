@@ -1,0 +1,141 @@
+.benefits{
+
+padding:130px 0;
+background:#08111F;
+
+}
+
+.benefits-container{
+
+max-width:1400px;
+
+margin:auto;
+
+display:grid;
+
+grid-template-columns:1.2fr .9fr;
+
+gap:70px;
+
+align-items:center;
+
+padding:0 60px;
+
+}
+
+.benefits h2{
+color:#1F66F2;
+line-height:1.02;
+max-width:1200px;
+letter-spacing:-3px;
+font-weight:550;
+margin-bottom:90px;
+font-size:54px;
+}
+
+.benefits-left{
+position:relative;
+}
+
+.benefits-left img{
+width:100%;
+border-radius:24px;
+display:block;
+}
+
+.vehicle-outline{
+    position:absolute;
+    left:16%;
+    top:16%;
+    width:58%;
+    height:68%;
+    border:4px solid #2FE06B;
+    border-radius:4px;
+    pointer-events:none;
+}
+
+/*].driver-circle{
+    position:absolute;
+    width:380px;
+    height:380px;
+    border:4px solid #2FE06B;
+    border-radius:50%;
+    left:26%;
+    top:5%;
+    pointer-events:none;
+}*/
+
+.vehicle-card{
+position:absolute;
+bottom:35px;
+left:35px;
+background:#F4F7FB;
+padding:20px;
+
+border-radius:18px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.18);
+
+width:270px;
+
+}
+
+.driver-ok{
+
+color:#22c55e;
+
+font-weight:600;
+
+margin:10px 0;
+
+}
+
+.benefits-right{
+
+display:flex;
+
+flex-direction:column;
+
+gap:22px;
+
+}
+
+.benefit-card{
+
+padding:28px;
+
+border-radius:20px;
+
+background:#F5F8FC;
+
+transition:.35s;
+
+border:1px solid #E4ECF7;
+
+}
+
+.benefit-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+border-color:#1F66F2;
+
+}
+
+.benefit-card h3{
+
+margin-bottom:10px;
+
+color:#0E2748;
+
+}
+
+.benefit-card p{
+
+color:#60738A;
+
+line-height:1.7;
+
+}

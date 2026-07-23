@@ -1,0 +1,133 @@
+.how{
+    padding:120px 0;
+    background:#F4F7FB;
+    color:#08111F;
+}
+
+.how-container{
+    max-width:1350px;
+    margin:auto;
+    padding:0 60px;
+}
+
+/* ---------- Encabezado ---------- */
+
+.section-tag{
+    font-size:21px;
+    color:#1F66F2;
+    margin-bottom:20px;
+    
+}
+
+.how h2{
+    color:#08111F;
+    font-size:54px;
+    line-height:1.02;
+    letter-spacing:-3px;
+    font-weight:550;
+    margin-bottom:30px;
+}
+
+.section-description{
+    color:#5575ac;
+    font-size:20px;
+    max-width:760px;
+    line-height:1.8;
+    margin-bottom:90px;
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:18px;
+    position:relative;
+    margin-bottom:90px;
+}
+
+.timeline::before{
+    content:"";
+    position:absolute;
+    top:28px;
+    left:7%;
+    right:7%;
+    height:2px;
+    background:#295A96;
+    z-index:0;
+}
+
+.step{
+    flex:1;
+    position:relative;
+    text-align:center;
+    z-index:2;
+}
+
+.circle{
+    width:56px;
+    height:56px;
+    background:#1F66F2;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:auto;
+    margin-bottom:35px;
+    font-size:22px;
+    font-weight:700;
+}
+
+.step svg{
+    color:#08111F;
+    margin-bottom:18px;
+}
+
+.step h3{
+    font-size:18px;
+    margin-bottom:12px;
+}
+
+.step p{
+    font-size:15px;
+    color:#5575ac;
+    line-height:1.5;
+}
+
+/* ---------- Animación ---------- */
+
+.animation{
+
+    position:sticky;
+
+    top:100px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:550px;
+}
+
+.demo-video{
+
+    position:absolute;
+
+    width:70%;
+
+    border-radius:20px;
+
+    opacity:0;
+
+    transition:opacity .6s ease;
+
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+}
+
+.demo-video.active{
+
+    opacity:1;
+}

@@ -1,0 +1,321 @@
+.map-svg{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    display:block;
+
+}
+
+.animation-layer{
+
+    position:absolute;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+}
+
+/* ---------- ALERTA ---------- */
+
+.alert-card{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:360px;
+
+padding:22px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.96);
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 18px 45px rgba(0,0,0,.22);
+
+display:flex;
+
+gap:18px;
+
+align-items:flex-start;
+
+opacity:0;
+
+animation:showAlert 6s linear infinite;
+
+z-index:50;
+
+}
+
+.alert-icon{
+
+width:52px;
+height:52px;
+
+border-radius:50%;
+
+background:#FFE5E5;
+
+color:#E53935;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:28px;
+
+flex-shrink:0;
+
+}
+
+.alert-content h3{
+
+margin:0;
+
+font-size:22px;
+
+color:#08111F;
+
+}
+
+.alert-content p{
+
+margin:10px 0 18px;
+
+font-size:15px;
+
+color:#5F6B7A;
+
+line-height:1.5;
+
+}
+
+.immobilize-btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:12px;
+
+background:#1F66F2;
+
+color:white;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+.immobilize-btn:hover{
+
+background:#184DBA;
+
+}
+
+/* ---------- ÉXITO ---------- */
+
+.success-card{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:340px;
+
+padding:22px;
+
+border-radius:22px;
+
+background:#F3FFF7;
+
+border:1px solid #CBEFD7;
+
+color:rgb(35, 104, 44);
+
+display:flex;
+
+gap:18px;
+
+align-items:center;
+
+box-shadow:0 18px 45px rgba(0,0,0,.18);
+
+opacity:0;
+
+animation:showSuccess 6s linear infinite;
+
+z-index:60;
+
+}
+
+.success-icon{
+
+width:50px;
+height:50px;
+
+border-radius:50%;
+
+background:#22C55E;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+font-size:24px;
+
+font-weight:700;
+
+}
+
+/* ---------- TIMELINE ---------- */
+
+@keyframes showAlert{
+
+0%,54%{
+
+opacity:0;
+
+}
+
+55%,78%{
+
+opacity:1;
+
+}
+
+79%,100%{
+
+opacity:0;
+
+}
+
+}
+
+@keyframes showSuccess{
+
+0%,79%{
+
+opacity:0;
+
+}
+
+80%,96%{
+
+opacity:1;
+
+}
+
+97%,100%{
+
+opacity:0;
+
+}
+
+}
+
+/*=========================================
+Pantalla Final
+==========================================*/
+
+.final-screen{
+
+position:absolute;
+inset:0;
+
+background:#020814;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+opacity:0;
+
+animation:showFinal 9s infinite;
+
+z-index:40;
+
+}
+
+.final-logo{
+width:170px;
+margin-bottom:34px;
+animation:logoAppear .7s ease;
+
+}
+
+.final-screen h2{
+color:white;
+font-size:42px;
+font-weight:700;
+letter-spacing:-1px;
+margin-bottom:18px;
+}
+
+.final-screen p{
+
+color:#A7BDD6;
+
+font-size:22px;
+
+}
+
+@keyframes showFinal{
+
+0%,82%{
+
+opacity:0;
+pointer-events:none;
+
+}
+
+88%,100%{
+
+opacity:1;
+
+}
+
+}
+
+@keyframes logoAppear{
+
+from{
+
+transform:translateY(25px);
+opacity:0;
+
+}
+
+to{
+
+transform:translateY(0);
+opacity:1;
+
+}
+
+}
