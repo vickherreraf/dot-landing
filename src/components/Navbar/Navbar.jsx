@@ -51,9 +51,9 @@ function Navbar() {
       </ul>
 
       {/* Botón */}
-      <button className="cta-button">
+      <a href="#contacto" className="cta-button">
         Solicitar Asesoría
-      </button>
+      </a>
 
     </nav>
   );
