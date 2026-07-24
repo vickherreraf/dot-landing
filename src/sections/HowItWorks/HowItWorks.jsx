@@ -20,48 +20,20 @@ const videos = [
 
 function HowItWorks(){
 const [activeVideo, setActiveVideo] = useState(0);
-
-const stepRefs = useRef([]);
+const videoRefs = useRef([]);
 
 useEffect(() => {
+    const activeVideoElement = videoRefs.current[activeVideo];
 
-    const observer = new IntersectionObserver(
+    if (activeVideoElement) {
+        activeVideoElement.currentTime = 0;
+        activeVideoElement.play().catch(() => {});
+    }
+}, [activeVideo]);
 
-        (entries)=>{
-
-            entries.forEach(entry=>{
-
-                if(entry.isIntersecting){
-
-                    setActiveVideo(Number(entry.target.dataset.index));
-
-                }
-
-            });
-
-        },
-
-        {
-
-            threshold:0.55
-
-        }
-
-    );
-
-    stepRefs.current.forEach(step=>{
-
-        if(step){
-
-            observer.observe(step);
-
-        }
-
-    });
-
-    return ()=>observer.disconnect();
-
-},[]);
+const handleVideoEnded = () => {
+    setActiveVideo((prev) => (prev + 1) % videos.length);
+};
 
 return(
 
@@ -99,11 +71,6 @@ return(
                 Solo los operadores autorizados pueden iniciar la operación de la unidad.
                 </p>
 
-                <div
-                    className="step"
-                    data-index="0"
-                    ref={(el)=>stepRefs.current[0]=el}
-                ></div>
 
             </div>
 
@@ -121,11 +88,6 @@ return(
                 <p>
                 El vehículo trabaja con total normalidad mientras el conductor sea reconocido.
                 </p>
-                <div
-                    className="step"
-                    data-index="1"
-                    ref={(el)=>stepRefs.current[1]=el}
-                ></div>
             </div>
 
 
@@ -142,11 +104,6 @@ return(
                 <p>
                 Un tercero intenta tomar el control de la unidad sin autorización.
                 </p>
-                <div
-                    className="step"
-                    data-index="2"
-                    ref={(el)=>stepRefs.current[2]=el}
-                ></div>
             </div>
 
 
@@ -158,16 +115,13 @@ return(
 
                 <Radar size={34}/>
 
-                <h3>Intruso detectado</h3>
+                <h3>Amenaza detectada</h3>
 
                 <p>
-                DOT identifica inmediatamente al conductor no autorizado y confirma el intento de robo.
+                DOT identifica si el conductor no está autorizado o 
+                detecta la presencia de un arma. 
+                Activa inmediatamente el protocolo de seguridad.
                 </p>
-                <div
-                    className="step"
-                    data-index="3"
-                    ref={(el)=>stepRefs.current[3]=el}
-                ></div>
             </div>
 
 
@@ -182,13 +136,9 @@ return(
                 <h3>Respuesta Automática</h3>
 
                 <p>
-                Se envían alertas, se notifica a las autoridades y se ejecuta la inmovilización inteligente.
+                Se inmoviliza la unidad de forma segura y se envían alertas 
+                inmediatas a las autoridades y al centro de monitoreo.
                 </p>
-                <div
-                    className="step"
-                    data-index="4"
-                    ref={(el)=>stepRefs.current[4]=el}
-                ></div>
             </div>
 
             <div className="step">
@@ -202,7 +152,8 @@ return(
                 <h3>Robo Frustrado</h3>
 
                 <p>
-                La unidad queda inmovilizada, facilitando su recuperación y evitando que continúe el robo.
+                La unidad queda inmovilizada, facilitando su recuperación y 
+                evitando que continúe el robo.
                 </p>
 
             </div>
@@ -216,19 +167,23 @@ return(
 
                     key={index}
 
+                    ref={(el) => {
+                        videoRefs.current[index] = el;
+                    }}
+
                     className={`demo-video ${activeVideo===index ? "active" : ""}`}
 
                     src={video}
 
-                    autoPlay
+                    autoPlay={activeVideo === index}
 
                     muted
-
-                    loop
 
                     playsInline
 
                     preload="metadata"
+
+                    onEnded={handleVideoEnded}
 
                 />
 

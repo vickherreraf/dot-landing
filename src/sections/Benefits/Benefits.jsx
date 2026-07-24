@@ -17,7 +17,7 @@ function Benefits() {
                 alt="Unidad"
                 className="vehicle-image"
             />
-            
+
             {/* Recuadro del vehículo */}
             <div className="vehicle-outline"></div>
 
@@ -58,31 +58,32 @@ function Benefits() {
         <h2>Beneficios</h2>
 
         <div className="benefit-card">
-            <h3>Protege tu patrimonio</h3>
+            <h3>Reduce la dependencia del monitoreo humano</h3>
             <p>
-            Reduce el riesgo de pérdida de activos
-            mediante inmovilización inteligente.
+            Automatiza la detección de eventos críticos, 
+            disminuyendo errores operativos y optimizando 
+            los costos de monitoreo.
             </p>
         </div>
 
         <div className="benefit-card">
 
-            <h3>Mayor probabilidad de recuperación</h3>
+            <h3>Protección incluso sin cobertura</h3>
 
             <p>
-            Actúa antes de que el vehículo abandone
-            la zona segura.
+            La operación continúa operando aun cuando la unidad pierde señal, 
+            manteniendo la capacidad de respuesta.
             </p>
 
         </div>
 
         <div className="benefit-card">
 
-            <h3>Configuración flexible</h3>
+            <h3>Resistente a inhibidores de señal (Jammers)</h3>
 
             <p>
-            Adapta reglas, usuarios y condiciones
-            según tu operación.
+            La protección permanece activa incluso ante intentos 
+            de bloqueo de comunicaciones.
             </p>
 
         </div>
