@@ -12,6 +12,14 @@
 
 /* ---------- Encabezado ---------- */
 
+.how-intro{
+    display:grid;
+    grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
+    align-items:center;
+    gap:70px;
+    margin-bottom:90px;
+}
+
 .section-tag{
     font-size:21px;
     color:#1F66F2;
@@ -33,7 +41,7 @@
     font-size:20px;
     max-width:760px;
     line-height:1.8;
-    margin-bottom:90px;
+    margin-bottom:0;
 }
 
 /* ---------- Timeline ---------- */
@@ -98,36 +106,62 @@
 /* ---------- Animación ---------- */
 
 .animation{
-
-    position:sticky;
-
-    top:100px;
-
+    position:relative;
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
-    min-height:550px;
+    min-height:430px;
 }
 
 .demo-video{
-
     position:absolute;
-
-    width:70%;
-
+    width:100%;
+    max-width:680px;
     border-radius:20px;
-
     opacity:0;
-
     transition:opacity .6s ease;
-
     box-shadow:0 30px 60px rgba(0,0,0,.35);
 }
 
 .demo-video.active{
-
     opacity:1;
+}
+
+@media (max-width: 900px){
+    .how{
+        padding:80px 0;
+    }
+
+    .how-container{
+        padding:0 28px;
+    }
+
+    .how-intro{
+        grid-template-columns:1fr;
+        gap:40px;
+        margin-bottom:70px;
+    }
+
+    .how h2{
+        font-size:42px;
+    }
+
+    .animation{
+        min-height:auto;
+        aspect-ratio:16 / 9;
+    }
+
+    .timeline{
+        flex-direction:column;
+        gap:40px;
+        margin-bottom:0;
+    }
+
+    .timeline::before{
+        display:none;
+    }
+
+    .step{
+        width:100%;
+    }
 }

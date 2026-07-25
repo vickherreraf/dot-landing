@@ -41,19 +41,41 @@ return(
 
     <div className="how-container">
 
-        <span className="section-tag">
-            {/*CÓMO FUNCIONA*/}
-        </span>
+        <div className="how-intro">
+            <div className="how-copy">
+                <span className="section-tag">
+                    {/*CÓMO FUNCIONA*/}
+                </span>
 
-        <h2>
-            {/*Una nueva capacidad para proteger tus unidades*/}
-            Cómo funciona 
-        </h2>
+                <h2>
+                    {/*Una nueva capacidad para proteger tus unidades*/}
+                    Cómo funciona
+                </h2>
 
-        <p className="section-description">
-            DOT combina hardware, inteligencia y acción para responder
-            antes de que una pérdida se convierta en un problema operativo.
-        </p>
+                <p className="section-description">
+                    DOT combina hardware, inteligencia y acción para responder
+                    antes de que una pérdida se convierta en un problema operativo.
+                </p>
+            </div>
+
+            <div className="animation">
+                {videos.map((video,index)=>(
+                    <video
+                        key={index}
+                        ref={(el) => {
+                            videoRefs.current[index] = el;
+                        }}
+                        className={`demo-video ${activeVideo===index ? "active" : ""}`}
+                        src={video}
+                        autoPlay={activeVideo === index}
+                        muted
+                        playsInline
+                        preload="metadata"
+                        onEnded={handleVideoEnded}
+                    />
+                ))}
+            </div>
+        </div>
 
         <div className="timeline">
 
@@ -159,37 +181,7 @@ return(
             </div>
 
         </div>
-        <div className="animation">
 
-            {videos.map((video,index)=>(
-
-                <video
-
-                    key={index}
-
-                    ref={(el) => {
-                        videoRefs.current[index] = el;
-                    }}
-
-                    className={`demo-video ${activeVideo===index ? "active" : ""}`}
-
-                    src={video}
-
-                    autoPlay={activeVideo === index}
-
-                    muted
-
-                    playsInline
-
-                    preload="metadata"
-
-                    onEnded={handleVideoEnded}
-
-                />
-
-            ))}
-
-        </div>
     </div>
    
 
