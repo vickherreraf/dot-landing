@@ -11,11 +11,14 @@ import {
 } from "lucide-react";
 
 const videos = [
+  "/videos/escena-problema1-kling.mp4",
+  "/videos/escena-problema2-kling-v2.mp4",
+  "/videos/escena-problema3-kling.mp4",
   "/videos/escena-1.mp4",
   "/videos/escena-2.mp4",
   "/videos/escena-3.mp4",
   "/videos/escena-4.mp4",
-  "/videos/escena-5.mp4",
+  "/videos/escena-5-2-kling.mp4",
 ];
 
 function HowItWorks(){
