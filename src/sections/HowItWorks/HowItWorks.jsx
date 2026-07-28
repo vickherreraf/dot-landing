@@ -11,14 +11,18 @@ import {
 } from "lucide-react";
 
 const videos = [
-  "/videos/escena-problema1-kling.mp4",
+  "/videos/problema-actual.mp4",
+  "/videos/escena-problema1-dos-fotogramas.mp4",
   "/videos/escena-problema2-kling-v2.mp4",
   "/videos/escena-problema3-kling.mp4",
+  "/videos/solucion.mp4",
   "/videos/escena-1.mp4",
   "/videos/escena-2.mp4",
   "/videos/escena-3.mp4",
   "/videos/escena-4.mp4",
   "/videos/escena-5-2-kling.mp4",
+  "/videos/escena-6.mp4",
+  "/videos/cta.mp4",
 ];
 
 function HowItWorks(){
@@ -37,6 +41,21 @@ useEffect(() => {
 const handleVideoEnded = () => {
     setActiveVideo((prev) => (prev + 1) % videos.length);
 };
+
+const solutionStartIndex = videos.indexOf("/videos/escena-1.mp4");
+const activeStep =
+    activeVideo >= solutionStartIndex && activeVideo < solutionStartIndex + 6
+        ? activeVideo - solutionStartIndex
+        : null;
+
+const getStepClassName = (stepIndex) =>
+    `step${
+        activeStep === null
+            ? ""
+            : activeStep === stepIndex
+                ? " active"
+                : " inactive"
+    }`;
 
 return(
 
@@ -80,9 +99,9 @@ return(
             </div>
         </div>
 
-        <div className="timeline">
+        <div className={`timeline ${activeStep !== null ? "sequence-active" : ""}`}>
 
-            <div className="step">
+            <div className={getStepClassName(0)}>
 
                 <div className="circle">
                 1
@@ -100,7 +119,7 @@ return(
             </div>
 
 
-            <div className="step">
+            <div className={getStepClassName(1)}>
 
                 <div className="circle">
                 2
@@ -116,7 +135,7 @@ return(
             </div>
 
 
-            <div className="step">
+            <div className={getStepClassName(2)}>
 
                 <div className="circle">
                 3
@@ -132,7 +151,7 @@ return(
             </div>
 
 
-            <div className="step">
+            <div className={getStepClassName(3)}>
 
                 <div className="circle">
                 4
@@ -150,7 +169,7 @@ return(
             </div>
 
 
-            <div className="step">
+            <div className={getStepClassName(4)}>
 
                 <div className="circle">
                 5
@@ -166,7 +185,7 @@ return(
                 </p>
             </div>
 
-            <div className="step">
+            <div className={getStepClassName(5)}>
 
                 <div className="circle">
                 6
